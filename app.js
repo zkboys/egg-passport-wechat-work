@@ -13,8 +13,8 @@ module.exports = app => {
         href,
         state,
         scope,
-        getAccessToken,
-        saveAccessToken,
+        getAccessToken = () => void 0,
+        saveAccessToken = () => void 0,
     } = app.config.passportWorkWechat;
 
     assert(key, '[egg-passport-work-wechat] config.passportWorkWechat.key required');
