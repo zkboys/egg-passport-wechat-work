@@ -1,10 +1,10 @@
 'use strict';
 
-exports.passportWechatWork = {
+exports.passportWorkWechat = {
     key: '',
     secret: '',
     agentId: 0,
-    callbackURL: '/passport/wechatWork/callback',
+    callbackURL: '/passport/workWechat/callback',
     // href,
     // state,
     // scope,

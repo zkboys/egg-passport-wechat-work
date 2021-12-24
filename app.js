@@ -1,6 +1,6 @@
 'use strict';
 
-const debug = require('debug')('egg-passport-wechat-work');
+const debug = require('debug')('egg-passport-work-wechat');
 const assert = require('assert');
 const Strategy = require('passport-work-wechat').Strategy;
 
@@ -9,14 +9,14 @@ module.exports = app => {
         key,
         secret,
         agentId,
-        callbackURL = '/passport/wechatWork/callback',
+        callbackURL = '/passport/workWechat/callback',
         href,
         state,
         scope,
-    } = app.config.passportWechatWork;
+    } = app.config.passportWorkWechat;
 
-    assert(key, '[egg-passport-wechat-work] config.passportWechatWork.key required');
-    assert(secret, '[egg-passport-wechat-work] config.passportWechatWork.secret required');
+    assert(key, '[egg-passport-work-wechat] config.passportWorkWechat.key required');
+    assert(secret, '[egg-passport-work-wechat] config.passportWorkWechat.secret required');
 
     const config = {
         corpId: key,
@@ -32,7 +32,7 @@ module.exports = app => {
     // 校验获取到的用户
     function doVerify(req, profile, done) {
         const user = {
-            provider: 'wechatWork',
+            provider: 'workWechat',
             id: profile.id,
             profile,
         };
@@ -52,5 +52,5 @@ module.exports = app => {
     /**
      * 获取用户的回调
      */
-    app.passport.use('wechatWork', new Strategy(config, doVerify, getAccessToken, saveAccessToken));
+    app.passport.use('workWechat', new Strategy(config, doVerify, getAccessToken, saveAccessToken));
 };

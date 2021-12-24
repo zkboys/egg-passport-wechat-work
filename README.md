@@ -12,7 +12,7 @@ $ npm i egg-passport-wechat-work --save
 
 ```js
 // config/plugin.js
-exports.passportWechatWork = {
+exports.passportWorkWechat = {
     enable: true,
     package: 'egg-passport-wechat-work',
 };
@@ -22,7 +22,7 @@ exports.passportWechatWork = {
 
 ```js
 // config/config.default.js
-exports.passportWechatWork = {
+exports.passportWorkWechat = {
     key: 'your oauth key',
     secret: 'your oauth secret',
     agentId: 0,

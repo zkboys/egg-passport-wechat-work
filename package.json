@@ -1,5 +1,5 @@
 {
-  "name": "egg-passport-wechat-work",
+  "name": "egg-passport-work-wechat",
   "version": "0.0.3",
   "description": "work wechat passport plugin for egg",
   "main": "app.js",
@@ -7,17 +7,14 @@
     "node": ">=8.0.0"
   },
   "eggPlugin": {
-    "name": "passportWechatWork",
+    "name": "passportWorkWechat",
     "dependencies": [
       "passport"
     ]
   },
   "dependencies": {
     "debug": "^2.6.8",
-    "passport-strategy": "^1.0.0",
-    "passport-wechat-work": "^0.2.0",
-    "passport-work-wechat": "0.0.1",
-    "request": "^2.88.2"
+    "passport-work-wechat": "0.0.1"
   },
   "devDependencies": {
     "autod": "^2.8.0",
@@ -50,7 +47,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liyunde/egg-passport-workweixin.git"
+    "url": "git+https://github.com/zkboys/egg-passport-work-wechat.git"
   },
   "keywords": [
     "egg",
@@ -61,7 +58,7 @@
   "author": "liyunde",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/liyunde/egg-passport-workweixin/issues"
+    "url": "https://github.com/zkboys/egg-passport-work-wechat/issues"
   },
-  "homepage": "https://github.com/liyunde/egg-passport-workweixin#readme"
+  "homepage": "https://github.com/zkboys/egg-passport-work-wechat#readme"
 }
