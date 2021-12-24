@@ -27,7 +27,15 @@ exports.passportWorkWechat = {
     secret: 'your oauth secret',
     agentId: 0,
     callbackURL: '/passport/wechatwork/callback',
-    skipUserProfile: true
+
+    // 从缓存中获取accessToken对象
+    getAccessToken: (app) => {
+
+    },
+    // 将accessToken对象设置到缓存中
+    saveAccessToken: (app, accessToken) => {
+
+    },
 };
 ```
 

@@ -13,6 +13,8 @@ module.exports = app => {
         href,
         state,
         scope,
+        getAccessToken,
+        saveAccessToken,
     } = app.config.passportWorkWechat;
 
     assert(key, '[egg-passport-work-wechat] config.passportWorkWechat.key required');
@@ -42,15 +44,17 @@ module.exports = app => {
         app.passport.doVerify(req, user, done);
     }
 
-    function getAccessToken(cb) {
+    async function _getAccessToken() {
+        return await getAccessToken(app);
     }
 
 
-    function saveAccessToken(accessToken, cb) {
+    async function _saveAccessToken(accessToken) {
+        return await saveAccessToken(app, accessToken);
     }
 
     /**
      * 获取用户的回调
      */
-    app.passport.use('workWechat', new Strategy(config, doVerify, getAccessToken, saveAccessToken));
+    app.passport.use('workWechat', new Strategy(config, doVerify, _getAccessToken, _saveAccessToken));
 };
