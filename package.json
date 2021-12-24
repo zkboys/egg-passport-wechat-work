@@ -1,0 +1,64 @@
+{
+  "name": "egg-passport-work-wechat",
+  "version": "0.0.1",
+  "description": "work wechat passport plugin for egg",
+  "main": "app.js",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "eggPlugin": {
+    "name": "passportWorkWechat",
+    "dependencies": [
+      "passport"
+    ]
+  },
+  "dependencies": {
+    "debug": "^2.6.8",
+    "passport-workweixin": "^0.4.1"
+  },
+  "devDependencies": {
+    "autod": "^2.8.0",
+    "egg": "^1.6.0",
+    "egg-bin": "^4.0.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.0.0",
+    "egg-passport": "^1.0.0",
+    "eslint": "^4.1.1",
+    "eslint-config-egg": "^5.0.0",
+    "ioredis": "^3.1.1",
+    "supertest": "^3.0.0",
+    "webstorm-disable-index": "^1.1.2"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "files": [
+    "app.js",
+    "config",
+    "lib"
+  ],
+  "ci": {
+    "version": "6,7,8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liyunde/egg-passport-workweixin.git"
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-passport",
+    "egg-passport-workweixin"
+  ],
+  "author": "liyunde",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/liyunde/egg-passport-workweixin/issues"
+  },
+  "homepage": "https://github.com/liyunde/egg-passport-workweixin#readme"
+}
