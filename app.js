@@ -2,15 +2,14 @@
 
 const debug = require('debug')('egg-passport-wechat-work');
 const assert = require('assert');
-const Strategy = require('passport-wechat-work').Strategy;
+const Strategy = require('passport-work-wechat').Strategy;
 
 module.exports = app => {
-
     const {
         key,
         secret,
         agentId,
-        callbackURL = '/passport/wechatwork/callback',
+        callbackURL = '/passport/wechatWork/callback',
         href,
         state,
         scope,

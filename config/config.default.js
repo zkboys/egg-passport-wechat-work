@@ -4,7 +4,7 @@ exports.passportWechatWork = {
     key: '',
     secret: '',
     agentId: 0,
-    callbackURL: '/passport/wechatwork/callback',
+    callbackURL: '/passport/wechatWork/callback',
     // href,
     // state,
     // scope,
