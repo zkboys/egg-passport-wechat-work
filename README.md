@@ -1,20 +1,20 @@
-# egg-passport-workweixin
+# egg-passport-work-wechat
 
-work weixin passport plugin for egg
+work wechat passport plugin for egg
 
 ## Install
 
 ```bash
-$ npm i egg-passport-workweixin --save
+$ npm i egg-passport-wechat-work --save
 ```
 
 ## Usage
 
 ```js
 // config/plugin.js
-exports.passportWorkWeiXin = {
-  enable: true,
-  package: 'egg-passport-workweixin',
+exports.passportWechatWork = {
+    enable: true,
+    package: 'egg-passport-wechat-work',
 };
 ```
 
@@ -22,12 +22,12 @@ exports.passportWorkWeiXin = {
 
 ```js
 // config/config.default.js
-exports.passportWorkWeiXin = {
-  key: 'your oauth key',
-  secret: 'your oauth secret',
-  agentId: 0,
-  callbackURL: '/passport/workweixin/callback',
-  skipUserProfile: true
+exports.passportWechatWork = {
+    key: 'your oauth key',
+    secret: 'your oauth secret',
+    agentId: 0,
+    callbackURL: '/passport/wechatwork/callback',
+    skipUserProfile: true
 };
 ```
 
@@ -35,7 +35,7 @@ see [config/config.default.js](config/config.default.js) for more detail.
 
 ## Questions & Suggestions
 
-Please open an issue [here](https://github.com/liyunde/egg-passport-workweixin/issues).
+Please open an issue [here](https://github.com/zkboys/egg-passport-work-wechat/issues).
 
 ## License
 

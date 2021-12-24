@@ -1,20 +1,20 @@
 {
-  "name": "egg-passport-work-wechat",
+  "name": "egg-passport-wechat-work",
   "version": "0.0.1",
   "description": "work wechat passport plugin for egg",
   "main": "app.js",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "eggPlugin": {
-    "name": "passportWorkWechat",
+    "name": "passportWechatWork",
     "dependencies": [
       "passport"
     ]
   },
   "dependencies": {
     "debug": "^2.6.8",
-    "passport-workweixin": "^0.4.1"
+    "passport-wechat-work": "^0.2.0"
   },
   "devDependencies": {
     "autod": "^2.8.0",
