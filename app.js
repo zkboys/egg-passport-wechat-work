@@ -6,49 +6,52 @@ const Strategy = require('passport-wechat-work').Strategy;
 
 module.exports = app => {
 
-    const config = app.config.passportWechatWork;
+    const {
+        key,
+        secret,
+        agentId,
+        callbackURL = '/passport/wechatwork/callback',
+        href,
+        state,
+        scope,
+    } = app.config.passportWechatWork;
 
-    config.passReqToCallback = true;
+    assert(key, '[egg-passport-wechat-work] config.passportWechatWork.key required');
+    assert(secret, '[egg-passport-wechat-work] config.passportWechatWork.secret required');
 
-    assert(config.key, '[egg-passport-wechat-work] config.passportWechatWork.key required');
-    assert(config.secret, '[egg-passport-wechat-work] config.passportWechatWork.secret required');
+    const config = {
+        corpId: key,
+        corpSecret: secret,
+        agentId,
+        callbackURL,
+        href,
+        state,
+        scope,
+        passReqToCallback: true,
+    };
 
-    config.clientID = config.key;
-    config.clientSecret = config.secret;
+    // 校验获取到的用户
+    function doVerify(req, profile, done) {
+        const user = {
+            provider: 'wechatWork',
+            id: profile.id,
+            profile,
+        };
 
-    config.requireState = false;
+        debug('%s %s get user: %j', req.method, req.url, user);
 
-    config.cache = app.redis;
+        app.passport.doVerify(req, user, done);
+    }
+
+    function getAccessToken(cb) {
+    }
+
+
+    function saveAccessToken(accessToken, cb) {
+    }
 
     /**
      * 获取用户的回调
      */
-    app.passport.use('wechatWork', new Strategy(config, (req, accessToken, ticket, params, profile, done) => {
-        // format user
-        const user = {
-            provider: 'wechatWork',
-            id: profile.id,
-            name: profile.username,
-            displayName: profile.displayName,
-            photo: profile.photo,
-            // accessToken,
-            // ticket,
-            profile,
-        };
-
-        // {
-        //   "errcode": 0,
-        //   "errmsg": "ok",
-        //   "UserId":"USERID",
-        //   "DeviceId":"DEVICEID",
-        //   "user_ticket": "USER_TICKET"，
-        //   "expires_in":7200
-        // }
-
-        debug('%s %s get user: %j', req.method, req.url, user);
-
-        // let passport do verify and call verify hook
-        app.passport.doVerify(req, user, done);
-    }))
-    ;
+    app.passport.use('wechatWork', new Strategy(config, doVerify, getAccessToken, saveAccessToken));
 };
