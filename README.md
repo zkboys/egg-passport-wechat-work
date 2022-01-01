@@ -1,11 +1,11 @@
-# egg-passport-work-wechat
+# @zkboys/egg-passport-work-wechat
 
 work wechat passport plugin for egg
 
 ## Install
 
 ```bash
-$ npm i egg-passport-wechat-work --save
+$ npm i @zkboys/egg-passport-wechat-work --save
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ $ npm i egg-passport-wechat-work --save
 // config/plugin.js
 exports.passportWorkWechat = {
     enable: true,
-    package: 'egg-passport-wechat-work',
+    package: '@zkboys/egg-passport-wechat-work',
 };
 ```
 
