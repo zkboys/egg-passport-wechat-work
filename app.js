@@ -2,7 +2,7 @@
 
 const debug = require('debug')('egg-passport-work-wechat');
 const assert = require('assert');
-const Strategy = require('passport-work-wechat').Strategy;
+const Strategy = require('@zkboys/passport-work-wechat').Strategy;
 
 module.exports = app => {
   const {

@@ -1,8 +1,11 @@
 {
-  "name": "egg-passport-work-wechat",
-  "version": "0.0.20",
+  "name": "@zkboys/egg-passport-work-wechat",
+  "version": "1.0.0",
   "description": "work wechat passport plugin for egg",
   "main": "app.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=8.0.0"
   },
@@ -13,8 +16,8 @@
     ]
   },
   "dependencies": {
-    "debug": "^2.6.8",
-    "passport-work-wechat": "0.0.10"
+    "@zkboys/passport-work-wechat": "^1.0.0",
+    "debug": "^2.6.8"
   },
   "devDependencies": {
     "autod": "^2.8.0",
