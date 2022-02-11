@@ -46,7 +46,7 @@
     "lib"
   ],
   "ci": {
-    "version": "6,7,8"
+    "version": "12,13,14"
   },
   "repository": {
     "type": "git",
