@@ -15,6 +15,7 @@ module.exports = app => {
     scope,
     getAccessToken = (app) => app.__work_wechat_access_token__,
     saveAccessToken = (app, accessToken) => app.__work_wechat_access_token__ = accessToken,
+    webLoginComponent = false,
   } = app.config.passportWorkWechat;
 
   assert(key, '[egg-passport-work-wechat] config.passportWorkWechat.key required');
@@ -29,6 +30,7 @@ module.exports = app => {
     state,
     scope,
     passReqToCallback: true,
+    webLoginComponent,
   };
 
   // 校验获取到的用户
